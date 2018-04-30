@@ -18,7 +18,7 @@
         <% @projects.top_five_most_recent.each do |project| %>
           <tr>
             <td><%= link_to project.title, project_path(project) %></td>
-            <td><%= project.header %></td>
+            <td><%= project.desc %></td>
             <td><%= project.url %><td>
           </tr>
           <% end %>

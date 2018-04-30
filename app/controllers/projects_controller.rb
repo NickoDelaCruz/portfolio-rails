@@ -1,8 +1,9 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
   def index
     @projects = Project.all.limit(6)
   end
-  
+
   def show
     @project = Project.find(params[:id])
   end

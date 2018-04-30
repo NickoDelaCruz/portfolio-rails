@@ -3153,3 +3153,636 @@ app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html
 Completed 200 OK in 4798ms (Views: 4776.1ms | ActiveRecord: 3.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:34:42 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (16.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 429ms (Views: 410.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:34:49 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (21.1ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `header' for #<Project:0xf06b0b8>):
+    18:         <% @projects.top_five_most_recent.each do |project| %>
+    19:           <tr>
+    20:             <td><%= link_to project.title, project_path(project) %></td>
+    21:             <td><%= project.header %></td>
+    22:             <td><%= project.url %><td>
+    23:           </tr>
+    24:           <% end %>
+  
+app/views/projects/index.html.erb:21:in `block in _app_views_projects_index_html_erb___458742395_125853456'
+app/views/projects/index.html.erb:18:in `_app_views_projects_index_html_erb___458742395_125853456'
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:34:53 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `header' for #<Project:0xfe1d7d0>):
+    18:         <% @projects.top_five_most_recent.each do |project| %>
+    19:           <tr>
+    20:             <td><%= link_to project.title, project_path(project) %></td>
+    21:             <td><%= project.header %></td>
+    22:             <td><%= project.url %><td>
+    23:           </tr>
+    24:           <% end %>
+  
+app/views/projects/index.html.erb:21:in `block in _app_views_projects_index_html_erb___458742395_127470192'
+app/views/projects/index.html.erb:18:in `_app_views_projects_index_html_erb___458742395_127470192'
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:35:04 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 140ms (Views: 131.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2018-04-30 01:35:06 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 148ms (Views: 135.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:35:07 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 163ms (Views: 143.7ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 1]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "When the Green Woods Laugh"], ["desc", "Mollitia repellat totam et modi."], ["url", "http://crona.org/pete_grimes"], ["created_at", "2018-04-30 08:35:50.601049"], ["updated_at", "2018-04-30 08:35:50.601049"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Absalom, Absalom!"], ["desc", "Quia voluptatem quidem omnis veritatis architecto quo et."], ["url", "http://hilpert.co/joany_schultz"], ["created_at", "2018-04-30 08:35:50.606062"], ["updated_at", "2018-04-30 08:35:50.606062"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Great Work of Time"], ["desc", "Unde hic eveniet non est."], ["url", "http://mcdermott.net/manuela"], ["created_at", "2018-04-30 08:35:50.607064"], ["updated_at", "2018-04-30 08:35:50.607064"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Fame Is the Spur"], ["desc", "Modi cumque sed harum nostrum."], ["url", "http://yost.org/roman"], ["created_at", "2018-04-30 08:35:50.609070"], ["updated_at", "2018-04-30 08:35:50.609070"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "By Grand Central Station I Sat Down and Wept"], ["desc", "Nemo dolorum ipsum voluptatem earum et."], ["url", "http://kozey.org/laurence"], ["created_at", "2018-04-30 08:35:50.610073"], ["updated_at", "2018-04-30 08:35:50.610073"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "For a Breath I Tarry"], ["desc", "In nihil occaecati voluptas reprehenderit et."], ["url", "http://jakubowski.info/kevon"], ["created_at", "2018-04-30 08:35:50.612078"], ["updated_at", "2018-04-30 08:35:50.612078"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lilies of the Field"], ["desc", "Ea dolor cumque consequatur possimus debitis."], ["url", "http://metzcasper.biz/malinda_simonis"], ["created_at", "2018-04-30 08:35:50.613080"], ["updated_at", "2018-04-30 08:35:50.613080"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Fair Stood the Wind for France"], ["desc", "Aut quia necessitatibus id rem ab."], ["url", "http://casper.org/stacey"], ["created_at", "2018-04-30 08:35:50.615086"], ["updated_at", "2018-04-30 08:35:50.615086"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I Know Why the Caged Bird Sings"], ["desc", "Aliquam dicta nulla dolorem voluptatem alias et facilis architecto."], ["url", "http://hansen.com/orpha"], ["created_at", "2018-04-30 08:35:50.617092"], ["updated_at", "2018-04-30 08:35:50.617092"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Jacob Have I Loved"], ["desc", "Quo dolor et nobis doloribus eum deserunt perferendis illum."], ["url", "http://stoltenbergkozey.biz/bernardo"], ["created_at", "2018-04-30 08:35:50.618128"], ["updated_at", "2018-04-30 08:35:50.618128"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:36:11 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 134ms (Views: 123.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/11" for 127.0.0.1 at 2018-04-30 01:36:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 129ms (Views: 119.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2018-04-30 01:36:21 -0700
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.0ms)
+  Rendered projects/_form.html.erb (508.4ms)
+  Rendered projects/new.html.erb within layouts/application (516.4ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 653ms (Views: 642.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2018-04-30 01:36:27 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8TiKcAor8KXTrKv/A6y34s8FcGriDSkOW+WMNG1BI53cmZ5h2AmfsXBh7gLaW8eXYuDajVdkzCRyBMnlDhNDeQ==", "project"=>{"title"=>"nickthekicker", "desc"=>"is funny", "url"=>"https://github.com/NickoDelaCruz/devise-paperclip-practice"}, "commit"=>"Create Project"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "nickthekicker"], ["desc", "is funny"], ["url", "https://github.com/NickoDelaCruz/devise-paperclip-practice"], ["created_at", "2018-04-30 08:36:27.243544"], ["updated_at", "2018-04-30 08:36:27.243544"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 13ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:36:27 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 136ms (Views: 127.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:36:48 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (4.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 130ms (Views: 122.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:36:49 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 128ms (Views: 118.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-04-30 01:36:51 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kmb2XNRD5MJfc+stsP6ZKbiy4BYi+HkHqClu6j3xb2okNak6lx+fW7oRF6QUa7lB8ksW4RyYUCm1Ze+XOUxZnw=="}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:36:51 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (4.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 133ms (Views: 124.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:36:52 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.1ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 172ms (Views: 170.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-30 01:36:53 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 149ms (Views: 149.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-30 01:36:54 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 150ms (Views: 149.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:36:54 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 154ms (Views: 154.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-30 01:36:56 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 152ms (Views: 151.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:38:54 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 130ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:38:54 -0700
+  
+SyntaxError (C:/Users/NickoDC/Desktop/Epicodus/app/controllers/projects_controller.rb:2: syntax error, unexpected tSYMBEG, expecting '('
+...user!, :only => [:show, :new. :create. :edit, :update, :dest...
+...                               ^
+C:/Users/NickoDC/Desktop/Epicodus/app/controllers/projects_controller.rb:2: syntax error, unexpected tSYMBEG, expecting '('
+...nly => [:show, :new. :create. :edit, :update, :destroy]
+...                               ^):
+  
+app/controllers/projects_controller.rb:2: syntax error, unexpected tSYMBEG, expecting '('
+app/controllers/projects_controller.rb:2: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:39:04 -0700
+  
+SyntaxError (C:/Users/NickoDC/Desktop/Epicodus/app/controllers/projects_controller.rb:2: syntax error, unexpected tSYMBEG, expecting '('
+...nly => [:show, :new, :create. :edit, :update, :destroy]
+...                               ^):
+  
+app/controllers/projects_controller.rb:2: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:39:15 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (8.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 137ms (Views: 125.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:39:17 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 131ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:39:18 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 128ms (Views: 119.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:39:20 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 158ms (Views: 149.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:39:26 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 131ms (Views: 121.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:39:27 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 130ms (Views: 121.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:39:27 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 148ms (Views: 139.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2018-04-30 01:39:45 -0700
+Processing by ProjectsController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:39:45 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 165ms (Views: 156.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2018-04-30 01:39:47 -0700
+Processing by ProjectsController#new as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:39:47 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 147ms (Views: 147.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:39:57 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 126ms (Views: 117.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:39:58 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:39:58 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 169ms (Views: 159.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:39:59 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 144ms (Views: 134.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:40:00 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:40:00 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 149ms (Views: 149.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:40:01 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 138ms (Views: 129.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:40:02 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:40:02 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 154ms (Views: 153.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:40:02 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:40:02 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 157ms (Views: 156.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:40:03 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:40:03 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 160ms (Views: 159.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:40:03 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 135ms (Views: 125.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:40:04 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:40:04 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 148ms (Views: 148.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:40:05 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:40:05 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 153ms (Views: 152.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:40:05 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:40:05 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 159ms (Views: 158.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:40:06 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:40:06 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 149ms (Views: 148.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:40:41 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 135ms (Views: 126.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:40:42 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (8.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 139ms (Views: 127.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/12" for 127.0.0.1 at 2018-04-30 01:40:43 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 131ms (Views: 121.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/projects/12" for 127.0.0.1 at 2018-04-30 01:40:46 -0700
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"g7mw4plx2npT8X129ikyEZATfZAejPq4h/rFbVDJ1nMinfeoXQic1sSUTzg9AhG9wG5XyOpuQK5f5KxkDtsgYA==", "id"=>"12"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 01:40:46 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 169ms (Views: 160.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:40:48 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 145ms (Views: 137.0ms | ActiveRecord: 0.0ms)
+
+
