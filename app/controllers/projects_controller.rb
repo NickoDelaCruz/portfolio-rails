@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all.limit(5)
+    @projects = Project.all.limit(6)
   end
+
   def show
     @project = Project.find(params[:id])
   end
@@ -9,7 +10,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
   end
-
+  #
   def create
     @project = Project.new(project_params)
     if @project.save
@@ -21,8 +22,8 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-   @project = Project.find(params[:id])
- end
+     @project = Project.find(params[:id])
+   end
 
   def update
     @project= Project.find(params[:id])
@@ -33,4 +34,16 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    if @project.destroy
+      flash[:alert] = "You've deleted the #{@project.title} project."
+      redirect_to projects_path
+    end
+  end
+
+private
+  def project_params
+    params.require(:project).permit(:title, :header, :url)
+  end
 end
