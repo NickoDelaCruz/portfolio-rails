@@ -1,5 +1,7 @@
 <h1>My Projects</h1>
 
+<hr>
+
 <ul>
   <% @projects.all %>
 </ul>
@@ -7,14 +9,14 @@
 
 <% if @projects.any? %>
   <table class="table">
-    <thead>
+    <head>
       <tr>
         <th>Title</th>
         <th>Description</th>
         <th>URL Address</th>
       </tr>
-    </thead>
-    <tbody>
+    </head>
+    <body>
         <% @projects.top_five_most_recent.each do |project| %>
           <tr>
             <td><%= link_to project.title, project_path(project) %></td>
@@ -26,7 +28,7 @@
         <% else %>
           <p>There are no projects!</p>
         <% end %>
-      </tbody>
+      </body>
     </table>
     <br>
     <h5><%= link_to "Create a new Project", new_project_path %></h5>
