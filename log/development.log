@@ -2496,3 +2496,149 @@ ActionView::Template::Error (Missing partial shared/_nav with {:locale=>[:en], :
     17: 
   
 app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__619645201_86446800'
+Started GET "/" for 127.0.0.1 at 2018-04-30 00:42:35 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (3.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 500 Internal Server Error in 480ms
+
+
+  
+ActionView::Template::Error (Missing partial shared/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Users/NickoDC/Desktop/Epicodus/app/views"
+  * "C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/devise-4.4.3/app/views"
+):
+    17: 
+    18:       <%= yield %>
+    19: 
+    20:       <%= render "shared/footer" %>
+    21:     </div>
+    22:   </body>
+    23: </html>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__69474778_91852452'
+Started GET "/" for 127.0.0.1 at 2018-04-30 00:43:32 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (3.5ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 500 Internal Server Error in 434ms
+
+
+  
+ActionView::Template::Error (Missing partial shared/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Users/NickoDC/Desktop/Epicodus/app/views"
+  * "C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/devise-4.4.3/app/views"
+):
+    17: 
+    18:       <%= yield %>
+    19: 
+    20:       <%= render "shared/footer" %>
+    21:     </div>
+    22:   </body>
+    23: </html>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___417864069_91610220'
+Started GET "/" for 127.0.0.1 at 2018-04-30 00:43:50 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 130ms (Views: 121.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 00:44:10 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  Rendered projects/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 155ms (Views: 129.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 00:44:11 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 141ms (Views: 131.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 00:44:12 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  Rendered projects/index.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 125ms (Views: 116.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-30 00:44:13 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (515.4ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 690ms (Views: 660.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-30 00:44:14 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.1ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 164ms (Views: 162.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-30 00:44:15 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 159ms (Views: 158.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-30 00:44:16 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.5ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 153ms (Views: 152.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-30 00:44:29 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"whLfHHwBtEdkl/ckYNYvA8axaYfsOMx3QWnTt3ExunCjc75ADpMYAEo3DXPZTI7BW5yW9/cvdhjp+kvSvd+KMA==", "user"=>{"email"=>"admin123@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin123@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin123@gmail.com"], ["encrypted_password", "$2a$11$/UqwGhYbv53cocG6/a/lTuKbE6NIUjJXeBmoKE/aJogoDOVW8841S"], ["created_at", "2018-04-30 07:44:29.975380"], ["updated_at", "2018-04-30 07:44:29.975380"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-04-30 07:44:29.977385"], ["last_sign_in_at", "2018-04-30 07:44:29.977385"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-04-30 07:44:29.978388"], ["id", 5]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 183ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 00:44:30 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (4.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 132ms (Views: 122.5ms | ActiveRecord: 1.0ms)
+
+
