@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.all.limit(6)
   end
-
+  
   def show
     @project = Project.find(params[:id])
   end
@@ -44,6 +44,6 @@ class ProjectsController < ApplicationController
 
 private
   def project_params
-    params.require(:project).permit(:title, :header, :url)
+    params.require(:project).permit(:title, :desc, :url)
   end
 end

@@ -3,3 +3,14 @@
 <ul>
   <% @projects.all %>
 </ul>
+
+
+<% if @projects.any? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>URL Address</th>
+      </tr>
+    </thead>

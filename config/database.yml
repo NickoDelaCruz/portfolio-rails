@@ -27,7 +27,7 @@ default: &default
 
 development:
   <<: *default
-  database: portfolio_website_development
+  database: portfolio_development
   username: postgres
   password: happy123
   pool: 5
@@ -65,7 +65,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: portfolio_website_test
+  database: portfolio_test
   username: postgres
   password: happy123
   pool: 5
@@ -92,7 +92,7 @@ test:
 #
 production:
   <<: *default
-  database: portfolio_website_production
+  database: portfolio_production
   username: postgres
   password: happy123
   pool: 5
