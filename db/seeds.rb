@@ -1,0 +1,1 @@
+Project.destroy_all
