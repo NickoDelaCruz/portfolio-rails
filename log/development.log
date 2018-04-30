@@ -3808,3 +3808,161 @@ Completed 200 OK in 159ms (Views: 158.8ms | ActiveRecord: 0.0ms)
   [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(4373051316486144390)[0m
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:50:31 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 151ms (Views: 140.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 2]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 6]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 10]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "All Passion Spent"], ["desc", "Est ratione eligendi. Quas sit quibusdam nesciunt est. Repellendus beatae voluptatem nostrum modi ut molestias."], ["url", "http://mayert.net/freida"], ["created_at", "2018-04-30 08:50:45.383827"], ["updated_at", "2018-04-30 08:50:45.383827"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Noli Me Tangere"], ["desc", "Aut culpa est soluta delectus ipsum. Consequatur sequi qui deserunt et qui ut. Quis recusandae tempora officiis. Minima error doloremque."], ["url", "http://smith.name/roberta_effertz"], ["created_at", "2018-04-30 08:50:45.388841"], ["updated_at", "2018-04-30 08:50:45.388841"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Great Work of Time"], ["desc", "Quo labore et magni. Laboriosam minima ratione ut sequi earum aut. Cupiditate architecto et id voluptas voluptatum repudiandae perferendis."], ["url", "http://koelpin.biz/laurence"], ["created_at", "2018-04-30 08:50:45.389843"], ["updated_at", "2018-04-30 08:50:45.389843"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Dance Dance Dance"], ["desc", "Maxime sunt illum ducimus. Non ut labore quia quo laudantium consequatur. Consequuntur nisi et dolorem delectus voluptas facilis."], ["url", "http://bogan.net/stella_anderson"], ["created_at", "2018-04-30 08:50:45.391849"], ["updated_at", "2018-04-30 08:50:45.391849"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Way Through the Woods"], ["desc", "Nihil aut amet nobis unde ipsam debitis ut. Et illo est dolore accusantium eligendi reiciendis. Qui suscipit culpa laudantium pariatur."], ["url", "http://heel.com/vinnie"], ["created_at", "2018-04-30 08:50:45.392851"], ["updated_at", "2018-04-30 08:50:45.392851"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Gone with the Wind"], ["desc", "Quia voluptatum molestiae architecto. Et quam est temporibus eos tempora. Laboriosam corrupti nemo impedit."], ["url", "http://littel.io/shad"], ["created_at", "2018-04-30 08:50:45.393854"], ["updated_at", "2018-04-30 08:50:45.393854"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "To Your Scattered Bodies Go"], ["desc", "Totam quis error nobis molestiae commodi quo sint. Nulla quia quod quisquam aut placeat ut. Voluptatem accusantium itaque eius dolores aut enim. Quia aut minima quae enim."], ["url", "http://bernhard.info/nathan"], ["created_at", "2018-04-30 08:50:45.395860"], ["updated_at", "2018-04-30 08:50:45.395860"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Absalom, Absalom!"], ["desc", "Quas dignissimos eos voluptatum nesciunt. Maiores unde voluptatem nam sint veniam modi. Id asperiores voluptatem est dolores assumenda inventore cupiditate. Aliquam incidunt rem voluptatem iste impedit sit. Porro pariatur nihil aut sunt adipisci est."], ["url", "http://gusikowski.org/serenity"], ["created_at", "2018-04-30 08:50:45.396862"], ["updated_at", "2018-04-30 08:50:45.396862"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "O Jerusalem!"], ["desc", "Maxime omnis cum fugiat quisquam reiciendis. Laudantium saepe facere cumque odio quia. Vel aut quos nesciunt ut."], ["url", "http://hilpert.org/ashley"], ["created_at", "2018-04-30 08:50:45.397865"], ["updated_at", "2018-04-30 08:50:45.397865"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Skull Beneath the Skin"], ["desc", "Minus eveniet at quas pariatur eius ut commodi. Odio aspernatur earum voluptas at odit quod sunt. Alias omnis nam aliquid minima iusto tempora deleniti. Consectetur dolorem at veritatis consequatur eum repellat. Ipsa iusto sed aliquam ullam."], ["url", "http://padberg.org/dawn"], ["created_at", "2018-04-30 08:50:45.399870"], ["updated_at", "2018-04-30 08:50:45.399870"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:50:50 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 126ms (Views: 117.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 01:50:52 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 130ms (Views: 120.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:50:53 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (8.0ms)
+  Rendered shared/_nav.html.erb (0.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 135ms (Views: 120.8ms | ActiveRecord: 3.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 13]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 21]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 22]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Tiger! Tiger!"], ["desc", "Rerum quam officiis. Explicabo et exercitationem vel. Id possimus omnis sed voluptates et aspernatur quia."], ["url", "http://breitenberg.net/sylvan"], ["created_at", "2018-04-30 08:51:27.718493"], ["updated_at", "2018-04-30 08:51:27.718493"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "A Glass of Blessings"], ["desc", "Nulla id quis nihil eius perferendis. Maiores accusamus saepe consequatur. Voluptatem illo consectetur dolorem et molestiae deserunt nemo."], ["url", "http://jaskolski.com/peyton"], ["created_at", "2018-04-30 08:51:27.720499"], ["updated_at", "2018-04-30 08:51:27.720499"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "To a God Unknown"], ["desc", "Provident voluptas expedita vero. Quod quia odio. Qui soluta suscipit doloremque est."], ["url", "http://west.name/elbert_gottlieb"], ["created_at", "2018-04-30 08:51:27.721502"], ["updated_at", "2018-04-30 08:51:27.721502"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Endless Night"], ["desc", "Eum consequatur ut ab et qui mollitia. Porro eligendi provident. Enim quam voluptates perferendis fuga veritatis impedit harum. Ratione hic voluptatem exercitationem adipisci."], ["url", "http://macgyver.io/sigurd"], ["created_at", "2018-04-30 08:51:27.722504"], ["updated_at", "2018-04-30 08:51:27.722504"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Wealth of Nations"], ["desc", "Rem voluptas possimus fugiat molestiae porro non laborum. Neque veniam quia provident omnis architecto velit quis. Enim occaecati qui laborum. Aut quaerat beatae. Quis quibusdam sed suscipit."], ["url", "http://cummingchuster.io/reilly"], ["created_at", "2018-04-30 08:51:27.724510"], ["updated_at", "2018-04-30 08:51:27.724510"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/projects" for 127.0.0.1 at 2018-04-30 01:51:28 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.0ms)
