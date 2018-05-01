@@ -28,10 +28,7 @@ default: &default
 development:
   <<: *default
   database: portfolio_development
-  username: postgres
-  password: happy123
-  pool: 5
-  timeout: 5000
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -66,10 +63,7 @@ development:
 test:
   <<: *default
   database: portfolio_test
-  username: postgres
-  password: happy123
-  pool: 5
-  timeout: 5000
+
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -93,7 +87,3 @@ test:
 production:
   <<: *default
   database: portfolio_production
-  username: postgres
-  password: happy123
-  pool: 5
-  timeout: 5000
