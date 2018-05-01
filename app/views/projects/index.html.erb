@@ -21,7 +21,7 @@
           <tr>
             <td><%= link_to project.title, project_path(project) %></td>
             <td><%= project.desc %></td>
-            <td><%= link_to project.url %><td>
+            <td>http://<%= link_to project.url, project.url %><td>
           </tr>
           <% end %>
         </ul>
