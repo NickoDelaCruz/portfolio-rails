@@ -21,7 +21,10 @@
           <tr>
             <td><%= link_to project.title, project_path(project) %></td>
             <td><%= project.desc %></td>
-            <td>http://<%= link_to project.url, project.url %><td>
+            <td>
+              <%if (project.url =~/http/)%><%= link_to project.url, project.url %>
+              <%else%><%= link_to "https://#{project.url}", "https://#{project.url}" %><%end%>
+            <td>
           </tr>
           <% end %>
         </ul>
