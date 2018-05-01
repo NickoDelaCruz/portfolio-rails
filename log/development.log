@@ -4499,3 +4499,1260 @@ puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
 puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (21.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4373051316486144390)[0m
+  [1m[35m (37.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProjects (20180430075519)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (70.3ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "title" character varying, "desc" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180430075519"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20180430080235)
+  [1m[35m (15.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4373051316486144390)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (12.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (16.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "projects" CASCADE[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "title" character varying, "desc" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180430080235)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "projects" CASCADE[0m
+  [1m[35m (36.9ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "title" character varying, "desc" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180430080235)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180430075519);
+
+[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-01 18:05:24.466869"], ["updated_at", "2018-05-01 18:05:24.466869"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-05-01 18:05:24.469959"], ["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2018-05-01 11:05:36 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+  Rendered shared/_nav.html.erb (3.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 4762ms (Views: 4755.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:05:44 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (19.6ms)
+  Rendered shared/_nav.html.erb (1.1ms)
+  Rendered shared/_alerts.html.erb (0.7ms)
+Completed 200 OK in 91ms (Views: 83.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2018-05-01 11:05:45 -0700
+Processing by ProjectsController#new as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-05-01 11:05:46 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.8ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 263ms (Views: 51.0ms | ActiveRecord: 200.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-05-01 11:05:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.5ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-05-01 11:06:00 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s5LFUmfvLSQiEuMBhOqO4zuQXvXWE0iwsvHdXFxM4yzXvJDEc1GeIQ3SKxGzgvfAMKpi4pk/EkiyKJIv4k2Pbg==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin@gmail.com"], ["encrypted_password", "$2a$11$l5CgbUQ1lUWk02S4CJvx0eqzRZ/5ihRFJ.3v/.2wLU/MrdHkrkVTK"], ["created_at", "2018-05-01 18:06:00.304339"], ["updated_at", "2018-05-01 18:06:00.304339"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-05-01 18:06:00.306938"], ["last_sign_in_at", "2018-05-01 18:06:00.306938"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-05-01 18:06:00.307384"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects/new
+Completed 302 Found in 153ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2018-05-01 11:06:00 -0700
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.4ms)
+  Rendered projects/_form.html.erb (3.9ms)
+  Rendered projects/new.html.erb within layouts/application (5.6ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 47.8ms | ActiveRecord: 1.6ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "No Highway"], ["desc", "Eos assumenda quia id fugiat. Beatae omnis nulla voluptas esse. Minima repellendus reprehenderit possimus recusandae aut. Molestiae eos quaerat atque tenetur perferendis. Et quas harum asperiores."], ["url", "http://walterhodkiewicz.info/saige_ankunding"], ["created_at", "2018-05-01 18:06:13.427278"], ["updated_at", "2018-05-01 18:06:13.427278"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "In Dubious Battle"], ["desc", "Est tenetur doloribus sed cum nulla vel. Ipsam veniam odio est modi ratione repudiandae quod. Omnis enim similique vel ad minus unde. Debitis dolorum iusto alias veniam eaque et."], ["url", "http://runolfon.co/addison"], ["created_at", "2018-05-01 18:06:13.430155"], ["updated_at", "2018-05-01 18:06:13.430155"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Lathe of Heaven"], ["desc", "Sunt reiciendis fugit debitis magnam quae dolorem. Voluptas reiciendis quis recusandae. Quia consequatur alias eligendi. Quia et perferendis magnam in ex. Similique maiores nostrum aliquid."], ["url", "http://oconnell.info/leopoldo.stokes"], ["created_at", "2018-05-01 18:06:13.432407"], ["updated_at", "2018-05-01 18:06:13.432407"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "This Lime Tree Bower"], ["desc", "Maiores sed repellat placeat ut adipisci. Dolorem hic dolores ut voluptates officia ut labore. Eos impedit officia ad est magnam. Quaerat quidem delectus eum tenetur dolor consequatur. Voluptas fugit debitis voluptatem saepe voluptatum est qui."], ["url", "http://kozeygoldner.org/ward.botsford"], ["created_at", "2018-05-01 18:06:13.434572"], ["updated_at", "2018-05-01 18:06:13.434572"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Parliament of Man"], ["desc", "Aperiam aliquam sint. Maxime dignissimos qui ratione eligendi possimus modi dolore. Et ipsam voluptates et. Illo quis saepe ipsam. Vitae reprehenderit ut voluptas quia."], ["url", "http://wyman.com/austyn"], ["created_at", "2018-05-01 18:06:13.436837"], ["updated_at", "2018-05-01 18:06:13.436837"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/projects/new" for 127.0.0.1 at 2018-05-01 11:06:22 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.3ms)
+  Rendered projects/_form.html.erb (376.1ms)
+  Rendered projects/new.html.erb within layouts/application (386.9ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 652ms (Views: 605.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:06:24 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:06:24 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2018-05-01 11:06:26 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 174ms (Views: 28.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:06:27 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2018-05-01 11:06:29 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.6ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:07:25 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:07:34 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_alerts.html.erb (0.9ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2018-05-01 11:07:37 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered shared/_alerts.html.erb (1.1ms)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:07:39 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.8ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-01 11:07:40 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.7ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-01 11:07:40 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-01 11:07:40 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-01 11:07:40 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.2ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:07:52 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.6ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-01 11:07:57 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.4ms)
+  Rendered shared/_alerts.html.erb (0.6ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:07:58 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.9ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:13:37 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (21.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (14.5ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 256ms (Views: 237.8ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:13:48 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:14:58 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:13 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:14 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:16 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.5ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:16 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.8ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:17 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.4ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:17 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:17 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:18 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:18 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.6ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:18 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:18 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:19 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:19 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.2ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:19 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.5ms)
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:19 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:19 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 47ms (Views: 44.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:20 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:21 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.5ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:21 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:21 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.3ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:21 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.3ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:21 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:22 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.4ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:22 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:22 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:22 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:23 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:28 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2018-05-01 11:17:40 -0700
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.3ms)
+  Rendered projects/_form.html.erb (361.7ms)
+  Rendered projects/new.html.erb within layouts/application (363.0ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 398ms (Views: 392.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2018-05-01 11:17:49 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cb/e86aIdt6Zs5tBciR90lUbb3XZfB6qTbftQR+koar/jKiN+/fsuiglUw6FeKDG2ACiuE1altEyNUAoKhiFjg==", "project"=>{"title"=>"dfafdsaf", "desc"=>"asdfadsfsadfsfad", "url"=>"www.facebook.com"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "desc", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "dfafdsaf"], ["desc", "asdfadsfsadfsfad"], ["url", "www.facebook.com"], ["created_at", "2018-05-01 18:17:49.566644"], ["updated_at", "2018-05-01 18:17:49.566644"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 20ms (ActiveRecord: 16.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:49 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:50 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:51 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:51 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:51 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.4ms)
+  Rendered shared/_alerts.html.erb (5.7ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:52 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:52 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:53 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:53 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:53 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:53 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:53 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.3ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:54 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:54 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.5ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:54 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:54 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.2ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 48ms (Views: 45.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:54 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:17:54 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.4ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:16 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `url_url' for #<Project:0x007fe61dc9b0e8>):
+    21:           <tr>
+    22:             <td><%= link_to project.title, project_path(project) %></td>
+    23:             <td><%= project.desc %></td>
+    24:             <td><%= link_to project.url_url %><td>
+    25:           </tr>
+    26:           <% end %>
+    27:         </ul>
+  
+app/views/projects/index.html.erb:24:in `block in _app_views_projects_index_html_erb__3768833088736288839_70313159547380'
+app/views/projects/index.html.erb:20:in `_app_views_projects_index_html_erb__3768833088736288839_70313159547380'
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:35 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `url_url' for #<Project:0x007fe61df01030>):
+    21:           <tr>
+    22:             <td><%= link_to project.title, project_path(project) %></td>
+    23:             <td><%= project.desc %></td>
+    24:             <td><%= project.url_url %><td>
+    25:           </tr>
+    26:           <% end %>
+    27:         </ul>
+  
+app/views/projects/index.html.erb:24:in `block in _app_views_projects_index_html_erb__3768833088736288839_70313160835600'
+app/views/projects/index.html.erb:20:in `_app_views_projects_index_html_erb__3768833088736288839_70313160835600'
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:41 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.7ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:42 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:42 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:42 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:42 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 38.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:43 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:43 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:43 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:19:43 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.8ms)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:04 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:05 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:05 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:05 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:05 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:05 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.4ms)
+  Rendered shared/_alerts.html.erb (0.5ms)
+Completed 200 OK in 75ms (Views: 72.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:06 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 61.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:06 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:41 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:42 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.5ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:42 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:21:42 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_alerts.html.erb (0.5ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-05-01 11:22:09 -0700
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.7ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 37.8ms | ActiveRecord: 1.2ms)
+
+
