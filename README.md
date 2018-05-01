@@ -38,6 +38,30 @@ $ rake db:migrate
 ```
 
 
+
+## Current Features
+
+- Users can sign up and sign in
+- User Authentication
+- User can add a their project
+
+## Future features
+- Implement admin gem
+- Implement paperclip (won't work on windows atm)
+- Change URLs into actual links
+
+## Personal Strengths
+ - Team Oriented
+ - Always positive
+ - Adaptive
+ - Patient
+
+## Interests
+- Guitar
+- Making fire beats
+- Books
+
+
 ## Seeding DB w/ Faker
 
 To populate db using Faker Gem run:
@@ -76,6 +100,8 @@ N/A
 * [Atom](https://atom.io/) - Text editor
 * [cmder](http://cmder.net/) - Windows terminal
 * [Ruby](http://railsinstaller.org/en) - Ruby on Rails
+* [Postgres](https://www.postgresql.org/download/) - Postgres
+
 
 
 
